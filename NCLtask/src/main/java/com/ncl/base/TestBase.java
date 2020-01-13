@@ -60,7 +60,9 @@ public class TestBase {
 		driver.manage().deleteAllCookies();
 //		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(config.getProperty("PAGE_LOAD_TIMEOUT")), TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(config.getProperty("IMPLICIT_WAIT")), TimeUnit.SECONDS);
+		
 		driver.get(config.getProperty("url"));
 		
 		actions = new Actions(driver);
