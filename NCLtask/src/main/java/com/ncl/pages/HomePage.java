@@ -20,11 +20,10 @@ public class HomePage extends TestBase {
 	@FindBy(how = How.CSS, using = "a[href='/excursions']")
 	WebElement exploreListShoreExcursions;
 	
-	public ShorExHomePage clickExploreShoreEx() {
+	public ShorExHomePage clickExploreShoreEx() throws InterruptedException {
 		actions.moveToElement(exploreDropList);
 		exploreDropList.click();
-//		waitUntilVisible(exploreListShoreExcursions);
-//		wait.until(ExpectedConditions.visibilityOf(exploreListShoreExcursions));
+		Thread.sleep(300);
 		exploreListShoreExcursions.click();		
 		return new ShorExHomePage();
 	}

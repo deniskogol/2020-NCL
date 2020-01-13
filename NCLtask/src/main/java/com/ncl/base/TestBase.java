@@ -13,7 +13,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import com.ncl.util.TestUtil;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
@@ -28,7 +28,7 @@ public class TestBase {
 		
 		try {
 			config = new Properties();
-		FileInputStream ip = new FileInputStream("F:/eclipse-workspace/NCLtask/src/main/java/com/ncl/config/config.properties");
+		FileInputStream ip = new FileInputStream("./src/main/java/com/ncl/config/config.properties");
 		    config.load(ip);		
 		}
 		catch (FileNotFoundException e) {
@@ -58,9 +58,9 @@ public class TestBase {
 	
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-//		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+
 		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(config.getProperty("PAGE_LOAD_TIMEOUT")), TimeUnit.SECONDS);
-//		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+
 		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(config.getProperty("IMPLICIT_WAIT")), TimeUnit.SECONDS);
 		
 		driver.get(config.getProperty("url"));
