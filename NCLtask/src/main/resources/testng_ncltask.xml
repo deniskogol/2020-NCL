@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+  
+<suite name="NCLtask" verbose="1" >
+  <test name="Shore Ex price $0-30 test" >
+    <classes>
+       <class name="com.ncl.tests.ShorExSearchTest" />
+    </classes>
+  </test>
+</suite>
